@@ -36,6 +36,11 @@ h3, h4 {
 .song-container img {
   width: 20%;
   border-radius: 50%;
+  animation: spinning linear 45s infinite forwards;
+  animation-play-state: paused;
+}
+.song-container img.spinning {
+  animation-play-state: running;
 }
 .song-container h2 {
   padding: 3rem 1rem 1rem 1rem;
@@ -44,6 +49,11 @@ h3, h4 {
   font-size: 1rem;
 }
 
+@keyframes spinning {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media screen and (max-width: 768px) {
   .song-container img {
     width: 60%;

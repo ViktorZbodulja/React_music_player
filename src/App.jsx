@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} />
+      <Song currentSong={currentSong} isPlaying={isPlaying} />
       <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} currentSong={currentSong} songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} />
       <Library songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} libraryStatus={libraryStatus} />
     </div>

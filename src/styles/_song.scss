@@ -6,7 +6,12 @@
     justify-content: center;
     img {
         width: 20%;
-        border-radius: 50%;
+        border-radius: 50%; 
+        animation: spinning linear 45s infinite forwards;
+        animation-play-state: paused;
+        &.spinning {
+            animation-play-state: running;
+        }
     }
     h2 {
         padding: 3rem 1rem 1rem 1rem;
@@ -14,6 +19,9 @@
     h3 {
         font-size: 1rem;
     }
+}
+@keyframes spinning {
+    100% { transform: rotate(360deg);}
 }
 
 @media screen and (max-width: 768px) {
