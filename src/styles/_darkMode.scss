@@ -1,0 +1,32 @@
+.dark-button {
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    &:hover {
+      background: white;
+      color: rgb(65, 65, 65);
+    }
+  }
+  
+  .dark-icon-font {
+    transition: all 0.5s ease;
+    color: white;
+  }
+  .icon-dark {
+    color: white;
+    transition: all 0.5s ease;
+  }
+  .dark {
+    background: linear-gradient(to right, #a7adb0, #2c3e50);
+    
+    color: white;
+  }
+
+  .library-song-dark {
+    &:hover {
+        background: #4acdc5;
+    }
+}
+  .selected-dark {
+    background-color: #10b7af;
+  }

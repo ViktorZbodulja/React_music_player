@@ -11,12 +11,14 @@ function App() {
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [libraryStatus, setLibraryStatus] = useState(false);
+  const [isDarkModeActive, setIsDarkModeActive] = useState(false);
+  
   return (
-    <div className={`App ${libraryStatus ? "library-active" : ""}`}>
-      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} isPlaying={isPlaying} />
-      <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} currentSong={currentSong} songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} />
-      <Library songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} libraryStatus={libraryStatus} />
+    <div className={`App ${libraryStatus ? "library-active" : ""} ${isDarkModeActive ? "dark" : ""}`}>
+      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} isDarkModeActive={isDarkModeActive} setIsDarkModeActive={setIsDarkModeActive} />
+      <Song currentSong={currentSong} isPlaying={isPlaying} isDarkModeActive={isDarkModeActive} />
+      <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} currentSong={currentSong} songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} isDarkModeActive={isDarkModeActive} />
+      <Library songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} libraryStatus={libraryStatus} isDarkModeActive={isDarkModeActive} />
     </div>
   );
 }

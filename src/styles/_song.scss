@@ -9,6 +9,7 @@
         border-radius: 50%; 
         animation: spinning linear 45s infinite forwards;
         animation-play-state: paused;
+        outline: 2px solid white;
         &.spinning {
             animation-play-state: running;
         }
@@ -23,7 +24,27 @@
 @keyframes spinning {
     100% { transform: rotate(360deg);}
 }
-
+@media screen and (max-width: 1600px) {
+    .song-container {
+        img {
+            width: 25%;
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .song-container {
+        img {
+            width: 35%;
+        }
+    }
+}
+@media screen and (max-width: 895px) {
+    .song-container {
+        img {
+            width: 40%;
+        }
+    }
+}
 @media screen and (max-width: 768px) {
     .song-container {
         img {

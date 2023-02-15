@@ -1,10 +1,10 @@
 import React from 'react'
 import LibrarySong from './LibrarySong'
 
-function Library({songs, setCurrentSong, setSongs, libraryStatus}) {
+function Library({songs, setCurrentSong, setSongs, libraryStatus, isDarkModeActive}) {
   return (
-    <div className={`library ${libraryStatus ? "active-library" : ""}`}>
-        <h2>Library</h2>
+    <div className={`library ${libraryStatus ? "active-library" : ""} ${isDarkModeActive ? "dark" : ""}`}>
+        <h2 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>Library</h2>
         <div className='library-songs'>
           {songs.map(song => (
             <LibrarySong 
@@ -13,7 +13,8 @@ function Library({songs, setCurrentSong, setSongs, libraryStatus}) {
             song={song}
             key={song.id}
             id={song.id}
-            setSongs={setSongs} />
+            setSongs={setSongs}
+            isDarkModeActive={isDarkModeActive} /> 
           ))}
         </div>
     </div>

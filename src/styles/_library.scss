@@ -11,7 +11,9 @@
     transition: all 0.5s ease;
     opacity: 0;
     h2 {
-        padding: 2rem;
+        padding: 0.8rem;
+        margin: 1rem 2rem 2rem 2rem;
+        border-bottom: 2px solid;
     }
 }
 .library-song {

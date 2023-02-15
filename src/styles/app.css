@@ -19,13 +19,24 @@ h3, h4 {
 
 .App {
   transition: all 0.5s ease;
+  height: 100vh;
 }
 
 .library-active {
-  margin-left: 25%;
-  margin-right: 5%;
+  padding-left: 25%;
+  padding-right: 5%;
 }
 
+@media screen and (max-width: 1200px) {
+  .library-active {
+    padding-left: 30%;
+  }
+}
+@media screen and (max-width: 895px) {
+  .library-active {
+    padding-left: 40%;
+  }
+}
 .song-container {
   min-height: 60vh;
   display: flex;
@@ -38,6 +49,7 @@ h3, h4 {
   border-radius: 50%;
   animation: spinning linear 45s infinite forwards;
   animation-play-state: paused;
+  outline: 2px solid white;
 }
 .song-container img.spinning {
   animation-play-state: running;
@@ -52,6 +64,21 @@ h3, h4 {
 @keyframes spinning {
   100% {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 1600px) {
+  .song-container img {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .song-container img {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 895px) {
+  .song-container img {
+    width: 40%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -157,7 +184,9 @@ input[type=range]::-moz-slider-thumb {
   opacity: 0;
 }
 .library h2 {
-  padding: 2rem;
+  padding: 0.8rem;
+  margin: 1rem 2rem 2rem 2rem;
+  border-bottom: 2px solid;
 }
 
 .library-song {
@@ -226,18 +255,55 @@ nav {
 nav button {
   background: transparent;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   border: 2px solid rgb(65, 65, 65);
   padding: 0.5rem;
+  margin-left: 1rem;
   transition: all 0.3s ease;
 }
 nav button:hover {
   background: rgb(65, 65, 65);
   color: white;
 }
+nav svg {
+  padding-left: 0.2rem;
+}
 
 @media screen and (max-width: 768px) {
   nav button {
     z-index: 10;
   }
+}
+.dark-button {
+  color: white;
+  border: 2px solid white;
+  outline: none;
+}
+.dark-button:hover {
+  background: white;
+  color: rgb(65, 65, 65);
+}
+
+.dark-icon-font {
+  transition: all 0.5s ease;
+  color: white;
+}
+
+.icon-dark {
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.dark {
+  background: linear-gradient(to right, #a7adb0, #2c3e50);
+  color: white;
+}
+
+.library-song-dark:hover {
+  background: #4acdc5;
+}
+
+.selected-dark {
+  background-color: #10b7af;
 }/*# sourceMappingURL=app.css.map */
