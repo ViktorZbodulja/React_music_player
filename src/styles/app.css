@@ -84,7 +84,7 @@ h3, h4 {
 }
 @media screen and (max-width: 768px) {
   .song-container img {
-    width: 40%;
+    width: 45%;
   }
 }
 .player {
@@ -166,7 +166,7 @@ input[type=range]::-moz-slider-thumb {
 
 .volume-range {
   transform: rotate(-90deg);
-  margin-left: 4rem;
+  margin-left: 3rem;
   margin-bottom: 5.5rem;
   height: 6px;
   width: 80px;
@@ -174,7 +174,7 @@ input[type=range]::-moz-slider-thumb {
 }
 
 .volume-button {
-  margin-left: 3rem;
+  margin-left: 2rem;
   font-size: 18px;
 }
 
