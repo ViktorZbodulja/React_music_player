@@ -5,6 +5,7 @@ import Library from "./components/Library";
 import Nav from "./components/Nav";
 import "./styles/app.css";
 import data from "./data";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
   const [songs, setSongs] = useState(data());
@@ -14,12 +15,26 @@ function App() {
   const [isDarkModeActive, setIsDarkModeActive] = useState(false);
   
   return (
-    <div className={`App ${libraryStatus ? "library-active" : ""} ${isDarkModeActive ? "dark" : ""}`}>
-      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} isDarkModeActive={isDarkModeActive} setIsDarkModeActive={setIsDarkModeActive} />
-      <Song currentSong={currentSong} isPlaying={isPlaying} isDarkModeActive={isDarkModeActive} />
-      <Player isPlaying={isPlaying} setIsPlaying={setIsPlaying} currentSong={currentSong} songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} isDarkModeActive={isDarkModeActive} />
-      <Library songs={songs} setCurrentSong={setCurrentSong} setSongs={setSongs} libraryStatus={libraryStatus} isDarkModeActive={isDarkModeActive} />
-    </div>
+    <AppProvider value={{
+          songs, 
+          setSongs, 
+          currentSong, 
+          setCurrentSong, 
+          isPlaying, 
+          setIsPlaying, 
+          libraryStatus, 
+          setLibraryStatus, 
+          isDarkModeActive, 
+          setIsDarkModeActive
+        }}
+      >
+      <div className={`App ${libraryStatus ? "library-active" : ""} ${isDarkModeActive ? "dark" : ""}`}>
+        <Nav />
+        <Song />
+        <Player />
+        <Library />
+      </div>
+    </AppProvider>
   );
 }
 

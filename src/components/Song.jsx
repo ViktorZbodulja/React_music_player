@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext }  from 'react';
+import AppContext from '../context/AppContext';
 
-function Song ({ currentSong, isPlaying, isDarkModeActive }) {
+function Song () {
+  const { currentSong, isPlaying, isDarkModeActive } = useContext(AppContext);
     return(
       <div className="song-container">
         <img className={!isPlaying ? 'holding' : 'spinning'} alt={currentSong.name} src={currentSong.cover} />
-        <h2 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>{currentSong.name}</h2>
+        <h2 className={`${isDarkModeActive ? "dark-icon-font" : ""}`} style={{color:currentSong.color[0]}}>{currentSong.name}</h2>
         <h3 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>{currentSong.artist}</h3>
       </div>    
     )

@@ -1,20 +1,18 @@
-import React from 'react'
+import React, { useContext }  from 'react';
+import AppContext from '../context/AppContext';
 import LibrarySong from './LibrarySong'
 
-function Library({songs, setCurrentSong, setSongs, libraryStatus, isDarkModeActive}) {
+function Library() {
+  const { songs, libraryStatus, isDarkModeActive } = useContext(AppContext);
   return (
     <div className={`library ${libraryStatus ? "active-library" : ""} ${isDarkModeActive ? "dark" : ""}`}>
         <h2 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>Library</h2>
         <div className='library-songs'>
           {songs.map(song => (
             <LibrarySong 
-            songs={songs} 
-            setCurrentSong={setCurrentSong} 
-            song={song}
-            key={song.id}
-            id={song.id}
-            setSongs={setSongs}
-            isDarkModeActive={isDarkModeActive} /> 
+              key={song.id}
+              song={song}
+             /> 
           ))}
         </div>
     </div>

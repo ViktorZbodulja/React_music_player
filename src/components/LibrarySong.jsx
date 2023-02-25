@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext }  from 'react';
+import AppContext from '../context/AppContext';
 
-function LibrarySong ({ song, songs, setCurrentSong, id, setSongs, isDarkModeActive }) {
-    const songSelectHandler = async () => {
-        await setCurrentSong(song);
+function LibrarySong ({song}) {
+  const { songs, setCurrentSong, id, setSongs, isDarkModeActive } = useContext(AppContext);
+    const songSelectHandler = () => {
+         setCurrentSong(song);
         //add active state
         const newSongs = songs.map((song) => {
           if(song.id === id){
@@ -17,7 +19,7 @@ function LibrarySong ({ song, songs, setCurrentSong, id, setSongs, isDarkModeAct
             }
           }
         });
-        await setSongs(newSongs);
+         setSongs(newSongs);
     }
     return(
       <div onClick={songSelectHandler} className={`library-song ${song.active ? 'selected' : ''} ${isDarkModeActive ? 'library-song-dark' : ''} ${isDarkModeActive && song.active ? 'selected-dark' : ''} `}>
@@ -26,7 +28,6 @@ function LibrarySong ({ song, songs, setCurrentSong, id, setSongs, isDarkModeAct
             <h3 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>{song.name}</h3>
             <h4 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>{song.artist}</h4>
         </div>
-       
       </div> 
         
     )

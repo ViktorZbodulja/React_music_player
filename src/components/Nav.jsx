@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext }  from 'react';
+import AppContext from '../context/AppContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
-function Nav({ libraryStatus, setLibraryStatus, isDarkModeActive, setIsDarkModeActive }) {
+function Nav() {
+  const { libraryStatus, setLibraryStatus, isDarkModeActive, setIsDarkModeActive } = useContext(AppContext);
+  
   return (
     <nav>
-        <h1 className={`${isDarkModeActive ? "dark-icon-font" : ""}`}>Chill.Hop</h1>
-        <div>
+        <h1 className={`${libraryStatus ? "hideTitle" : ""} ${isDarkModeActive ? "dark-icon-font" : ""}`}>Chill.Hop</h1>
+        <div className='button-container'>
           <button className={`${isDarkModeActive ? "dark-button" : ""}`} 
                   onClick={() => setLibraryStatus(!libraryStatus)}>
                     Library

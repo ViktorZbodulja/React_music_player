@@ -1,5 +1,6 @@
 .song-container {
     min-height: 60vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,21 +35,21 @@
 @media screen and (max-width: 1200px) {
     .song-container {
         img {
-            width: 35%;
+            width: 30%;
         }
     }
 }
 @media screen and (max-width: 895px) {
     .song-container {
         img {
-            width: 40%;
+            width: 35%;
         }
     }
 }
 @media screen and (max-width: 768px) {
     .song-container {
         img {
-            width: 60%;
+            width: 40%;
         }
     }
 }
