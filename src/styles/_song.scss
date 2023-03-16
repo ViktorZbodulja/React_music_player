@@ -1,6 +1,5 @@
 .song-container {
     min-height: 60vh;
-    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +9,7 @@
         border-radius: 50%; 
         animation: spinning linear 45s infinite forwards;
         animation-play-state: paused;
-        outline: 2px solid white;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
         &.spinning {
             animation-play-state: running;
         }
@@ -20,7 +19,13 @@
     }
     h3 {
         font-size: 1rem;
+        text-decoration: underline;
+        text-underline-position: under;
+        padding-bottom: 5px;
     }
+}
+.circle-outline {
+    outline: 2px solid white;
 }
 @keyframes spinning {
     100% { transform: rotate(360deg);}
@@ -41,15 +46,22 @@
 }
 @media screen and (max-width: 895px) {
     .song-container {
+        margin-top: 1rem;
         img {
-            width: 35%;
+            width: 40%;
         }
     }
 }
 @media screen and (max-width: 768px) {
     .song-container {
         img {
-            width: 45%;
+            width: 40%;
         }
+    }
+}
+@media screen and (max-width: 390px) {
+    .song-container img {
+         width: 50%;
+        
     }
 }

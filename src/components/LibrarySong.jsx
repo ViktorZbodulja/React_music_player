@@ -1,10 +1,12 @@
 import React, { useContext }  from 'react';
 import AppContext from '../context/AppContext';
 
-function LibrarySong ({song}) {
-  const { songs, setCurrentSong, id, setSongs, isDarkModeActive } = useContext(AppContext);
+function LibrarySong ({ song }) {
+  const { songs, setCurrentSong, setSongs, isDarkModeActive } = useContext(AppContext);
+  const { id } = song;
     const songSelectHandler = () => {
-         setCurrentSong(song);
+      setCurrentSong({ ...song, active: true });
+        //setCurrentSong(song);
         //add active state
         const newSongs = songs.map((song) => {
           if(song.id === id){
@@ -19,7 +21,7 @@ function LibrarySong ({song}) {
             }
           }
         });
-         setSongs(newSongs);
+        setSongs(newSongs);
     }
     return(
       <div onClick={songSelectHandler} className={`library-song ${song.active ? 'selected' : ''} ${isDarkModeActive ? 'library-song-dark' : ''} ${isDarkModeActive && song.active ? 'selected-dark' : ''} `}>

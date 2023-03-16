@@ -9,7 +9,7 @@ import Fallin from "./img/Fallin.jpg";
 import Daydreams from "./img/Daydreams.jpg";
 import Destination from "./img/Destination.jpg";
 
-function chillHop() {
+function chillWaves() {
   return [
     {
       name: "Beaver Creek",
@@ -104,4 +104,4 @@ function chillHop() {
   ];
 }
 
-export default chillHop;
+export default chillWaves;

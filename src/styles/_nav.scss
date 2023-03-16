@@ -55,6 +55,14 @@ nav {
         }
     }
 }
+@media screen and (max-width: 375px) {
+    nav {
+        h1 {
+            top:80px;
+        }
+        }
+}
+
 @media screen and (max-width: 330px) {
     nav {
         button {

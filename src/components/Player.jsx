@@ -1,7 +1,7 @@
 import React, {useRef, useState, useEffect, useContext} from "react";
 import AppContext from '../context/AppContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faAngleLeft, faAngleRight, faPause, faVolumeDown } from "@fortawesome/free-solid-svg-icons";
+import { faVolumeDown, faCirclePlay, faCirclePause, faForwardStep, faBackwardStep } from "@fortawesome/free-solid-svg-icons";
 
 function Player () {
   const { isPlaying, setIsPlaying, currentSong, songs, setCurrentSong, setSongs, isDarkModeActive } = useContext(AppContext);
@@ -135,18 +135,18 @@ function Player () {
           <FontAwesomeIcon 
             onClick={() => skipTrackHandler('skip-back')} 
             className={`skip-back ${isDarkModeActive ? "icon-dark" : ""}`} 
-            size="2x" icon={faAngleLeft} />
+            style={{ fontSize: 28 }} icon={faBackwardStep} />
           <FontAwesomeIcon 
             onClick={playSongHandler} 
             className={`play ${isDarkModeActive ? "icon-dark" : ""}`}
-            size="2x" 
-            icon={isPlaying ? faPause : faPlay} />
+            style={{ fontSize: 45 }}
+            icon={isPlaying ? faCirclePause : faCirclePlay} />
           <div className="volume-container">
             <FontAwesomeIcon 
               onClick={() => skipTrackHandler('skip-forward')}
               className={`skip-forward ${isDarkModeActive ? "icon-dark" : ""}`} 
-              size="2x" 
-              icon={faAngleRight} />
+              style={{ fontSize: 28 }}
+              icon={faForwardStep} />
             <FontAwesomeIcon
               className={`volume-button ${isDarkModeActive ? "icon-dark" : ""}`} 
               onClick={() => setActiveVolume(!activeVolume)}

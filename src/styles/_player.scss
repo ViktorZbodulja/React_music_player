@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
 }
+
 .time-control {
     display: flex;
     width: 50%;
@@ -21,14 +22,12 @@
         padding: 0rem 1rem;
     }
 }
-
 .play-control {
     display: flex;
-    width:40%;
+    width: 20%;
     justify-content: space-between;
-    //align-items: center;
+    align-items: center;
     padding: 1rem;
-    width: 40%;
     svg {
         cursor: pointer;
     }
@@ -72,9 +71,9 @@ input[type="range"]::-webkit-slider-thumb {
 .volume-range {
     transform: rotate(-90deg);
     margin-left: 3rem;
-    margin-bottom: 5.5rem;
+    margin-bottom: 5rem;
     height: 6px;
-    width: 80px;
+    width: 70px;
     position: absolute;   
 }
 .volume-button {
@@ -88,12 +87,17 @@ input[type="range"]::-webkit-slider-thumb {
     
     
 }
+@media screen and (max-width: 1600px) {
+    .play-control {
+        width: 30%;
+    }
+}
 @media screen and (max-width: 1200px) {
     .time-control {
         width: 70%;   
     }
     .play-control {
-        width: 70%;
+        width: 38%;
     }
 }
 @media screen and (max-width: 895px) {
@@ -101,14 +105,28 @@ input[type="range"]::-webkit-slider-thumb {
         width: 80%;   
     }
     .play-control {
-        width: 80%;
+        width: 45%;
     }
+    
 }
 @media screen and (max-width: 768px) {
     .time-control {
         width: 90%;   
     }
     .play-control {
-        width: 60%;
+        width: 30%;
+    }
+}
+@media screen and (max-width: 575px) {
+    .play-control {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 330px) {
+    .play-control  {
+       font-size: 15px;  
+    }
+    .play-control {
+        width: 50%;
     }
 }
